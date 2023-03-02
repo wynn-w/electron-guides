@@ -1,5 +1,6 @@
 
-const { app, BrowserWindow, screen,globalShortcut }= require('electron');
+const { app, BrowserWindow, screen } = require('electron');
+const { registryShortcut } = require('./sysShortcut');
 let mainWindow= null;
 class createWin {
   constructor() {
@@ -18,6 +19,7 @@ class createWin {
     mainWindow.loadURL(url);
     mainWindow.on('ready-to-show', () => {
       mainWindow.show();
+      registryShortcut();
     });
   }
 }
