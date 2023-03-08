@@ -1,6 +1,6 @@
 
 const { app, BrowserWindow, screen } = require('electron');
-const { registryShortcut } = require('./sysShortcut');
+const { registryShortcut } = require('./sysShortcut.js');
 let mainWindow= null;
 class createWin {
   constructor() {

@@ -3,8 +3,27 @@
   "version": "0.0.1",
   "description": "",
   "main": "./electron/main.js",
+  "build": {
+    "appId": "electron-guides-demo-0x01",
+    "electronDownload": {
+      "mirror": "https://npm.taobao.org/mirrors/electron/"
+    },
+    "asar": false,
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "artifactName": "${productName}_setup_${version}.${ext}"
+    }
+  },
   "scripts": {
-    "dev": "electron ."
+    "dev": "electron .",
+    "build": "electron-builder"
   },
   "repository": {
     "type": "git",
@@ -13,13 +32,15 @@
   "keywords": [
     "electron"
   ],
-  "author": "wwwynn22@gmail.com",
+  "author": "wynn-w(wwwynn22@gmail.com)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/wynn-w/electron-guides/issues"
   },
   "homepage": "https://github.com/wynn-w/electron-guides#readme",
-  "dependencies": {
-    "electron": "^18.0.0"
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^18.0.0",
+    "electron-builder": "^23.6.0"
   }
 }
